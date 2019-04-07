@@ -15,9 +15,9 @@ public class figureToWordSuman {
                 if(number == 0){
                     return "zero";
                 }else {
-                    String first = figureToWord(this.number/100,"Hundred");
+                    String first = figureToWord(this.number/100," HUNDRED ");
                     String second = figureToWord(this.number%100,"");
-                    return first+" HUNDRED "+second;
+                    return first + second;
                 }
             }else return "Number out of range.";
         }
@@ -26,6 +26,9 @@ public class figureToWordSuman {
         String tens[] ={"","","TWENTY","THIRTY","FORTY","FIFTY","SIXTY","SEVENTY","EIGHTY","NINETY"};
         if (num > 19){
             return tens[num/10]+ " " + ones[num%10];
-        }else return ones[num];
+        }else if (num > 0){
+            return ones[num]+val;
+        }else
+            return ones[num];
     }
 }
